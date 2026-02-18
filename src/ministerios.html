@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministérios - Igreja Base Belém</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0f172a', blue: '#1e40af' } }, fontFamily: { sans: ['Open Sans'], heading: ['Montserrat'] } } } }
+    </script>
+</head>
+<body class="bg-white text-slate-700 antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm shadow-md nav-dark">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 text-white">
+                <i class="fa-solid fa-water text-3xl"></i>
+                <span class="font-heading font-bold text-2xl">BASE BELÉM</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="ministerios.html" class="nav-link text-white font-bold">Ministérios</a>
+                <a href="quem-somos.html" class="nav-link">Quem somos</a>
+            </div>
+            <div class="md:hidden text-white"><i class="fa-solid fa-bars text-2xl"></i></div>
+        </div>
+    </nav>
+
+    <header class="page-header mt-20">
+        <h1 class="page-title">MINISTÉRIOS</h1>
+        <div class="page-nav-links">
+            <a href="#kids">KIDS</a>
+            <a href="#mulheres">MULHERES</a>
+            <a href="#adoracao">ADORAÇÃO</a>
+        </div>
+    </header>
+
+    <main class="py-10">
+        <div id="kids" class="ministry-item">
+            <div class="ministry-logo"><i class="fa-solid fa-child-reaching"></i></div>
+            <h3 class="text-2xl font-bold font-heading mb-4 text-brand-navy">BASE KIDS</h3>
+            <p class="leading-relaxed text-slate-600">
+                O ministério infantil existe para que as crianças tenham um encontro real com Jesus. 
+                Não é apenas entretenimento, é ensino bíblico em uma linguagem que eles entendem.
+            </p>
+        </div>
+        <div id="mulheres" class="ministry-item">
+            <div class="ministry-logo"><i class="fa-solid fa-person-dress"></i></div>
+            <h3 class="text-2xl font-bold font-heading mb-4 text-brand-navy">REDE DE MULHERES</h3>
+            <p class="leading-relaxed text-slate-600">
+                Um lugar de acolhimento e fortalecimento. Nossa rede de mulheres visa levantar 
+                mulheres virtuosas, fortes e posicionadas em Deus.
+            </p>
+        </div>
+        <div id="adoracao" class="ministry-item">
+            <div class="ministry-logo"><i class="fa-solid fa-music"></i></div>
+            <h3 class="text-2xl font-bold font-heading mb-4 text-brand-navy">DOS SONIDOS</h3>
+            <p class="leading-relaxed text-slate-600">
+                Nossa adoração é nossa arma de guerra e nossa expressão de amor. 
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-brand-navy text-white py-8 text-center text-sm">
+        <p>© 2026 Igreja Base Belém.</p>
+    </footer>
+
+</body>
+</html>

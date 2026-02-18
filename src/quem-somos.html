@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem somos - Igreja Base Belém</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0f172a' } }, fontFamily: { sans: ['Open Sans'], heading: ['Montserrat'] } } } }
+    </script>
+</head>
+<body class="bg-white text-slate-600 antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="font-heading font-bold text-xl tracking-widest text-black">BASE BELÉM</a>
+            <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase">
+                <a href="index.html" class="hover:text-brand-navy">Início</a>
+                <a href="ministerios.html" class="hover:text-brand-navy">Ministérios</a>
+                <a href="quem-somos.html" class="text-black border-b-2 border-black">Sala de Oração</a>
+            </div>
+            <div class="md:hidden"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <header class="relative h-[60vh] flex items-center justify-center bg-gray-100 overflow-hidden mt-20">
+        <img src="https://images.unsplash.com/photo-1536514072410-50c9a87a09e6?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale">
+        <div class="relative z-10 text-center">
+            <h1 class="text-6xl md:text-8xl font-heading font-thin text-black mb-2 tracking-tighter">QUEM</h1>
+            <h2 class="text-4xl md:text-5xl font-heading font-bold text-black tracking-widest mb-6">SOMOS</h2>
+            <p class="text-xs font-bold tracking-[0.3em] uppercase text-gray-600">Perseverai em oração • Colossenses 4:2</p>
+        </div>
+    </header>
+
+    <section class="py-24 px-6">
+        <div class="max-w-3xl mx-auto text-center space-y-8">
+            <p class="text-lg font-light leading-8">
+                Cremos que Deus nos chamou para erguer um lugar de contínua oração, adoração e louvor a Ele.
+                Respondendo a este chamado, perseveramos em buscar em Deus e na Sua presença as ferramentas para
+                dignificarmos o Autor e Consumador da nossa fé.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-gray-300 py-16 text-center">
+        <h3 class="text-2xl font-bold text-white uppercase mb-2">BASE BELÉM</h3>
+        <p class="text-white font-bold tracking-wider mb-1">DOMINGO | TERÇA-FEIRA</p>
+        <p class="text-white font-light text-sm"> 10H00 e 18H00 | 20H00 </p>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="text-gray-400 font-light italic text-sm leading-7">
+                "Regozijai-vos sempre. Orai sem cessar. Em tudo dai graças..."
+                <br>— 1 Tessalonicenses 5:16-18
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-white py-8 text-center text-[10px] text-gray-400 tracking-widest border-t">
+        <p>TODOS OS DIREITOS RESERVADOS © 2026 IGREJA BASE BELÉM</p>
+    </footer>
+
+</body>
+</html>
