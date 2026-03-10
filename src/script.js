@@ -41,7 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
             // nav.classList.add('bg-transparent'); // Se quiser reverter
         }
 
+// --- Animação de Letras (GSAP + SplitText) ---
+// O $(document).ready garante que o jQuery espera o HTML carregar completamente
+$(document).ready(function() {
+    
+    var $textElements = $(".split");
+    
+    // Só executa a animação se a classe .split existir na página e o SplitText estiver carregado
+    if($textElements.length > 0 && typeof SplitText !== 'undefined') {
+        
+        var split = new SplitText($textElements, {type: "chars, words"}); 
 
+        function random(min, max){
+            return (Math.random() * (max - min)) + min;
+        }
+
+        $(split.chars).each(function(i){
+            TweenMax.from($(this), 2.5, {
+                opacity: 0,
+                x: random(-500, 500),
+                y: random(-500, 500),
+                z: random(-500, 500),
+                scale: .1,
+                delay: i * .02,
+                yoyo: true,
+                repeat: -1,
+                repeatDelay: 10
+            });
+        });
+    }
+});
     
 
         

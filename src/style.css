@@ -112,6 +112,16 @@ html {
     color: #1e40af;
 }
 
+/* --- ANIMAÇÕES DE TEXTO (SplitText) --- */
+.split {
+    perspective: 400px;
+}
+
+/* Garante que os caracteres consigam sofrer transformações (girar, voar, etc) */
+.split div {
+    display: inline-block; 
+}
+
 /* Responsividade específica para telas muito pequenas */
 @media (max-width: 640px) {
     .page-header {
