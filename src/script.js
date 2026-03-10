@@ -40,6 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('shadow-lg');
             // nav.classList.add('bg-transparent'); // Se quiser reverter
         }
+
+
+    
+
+        
+
+
+
+
     });
 
 });
