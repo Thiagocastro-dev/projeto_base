@@ -9,31 +9,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
-        tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0f172a' } }, fontFamily: { sans: ['Open Sans'], heading: ['Montserrat'] } } } }
+        tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0f172a', blue: '#1e40af' } }, fontFamily: { sans: ['Open Sans'], heading: ['Montserrat'] } } } }
     </script>
 </head>
 <body class="bg-white text-slate-600 antialiased font-sans">
 
-    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm" id="main-nav">
         <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <img src="../img/Logo Preto.png" alt="Logo Igreja Base" class="h-10 md:h-12 w-auto object-contain">
-                </a>
+                <img src="../img/Logo Preto.png" alt="Logo Igreja Base" class="h-10 md:h-12 w-auto object-contain">
+            </a>
             <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase">
                 <a href="index.html" class="hover:text-brand-navy">Início</a>
                 <a href="ministerios.html" class="hover:text-brand-navy">Ministérios</a>
                 <a href="nosso-proposito.html" class="text-black border-b-2 border-black">Nosso Propósito</a>
             </div>
-            <div class="md:hidden"><i class="fa-solid fa-bars"></i></div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-slate-800"><i class="fa-solid fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-2 shadow-xl">
+             <a href="index.html" class="block p-2 font-bold text-gray-700">Início</a>
+             <a href="ministerios.html" class="block p-2 font-bold text-gray-700">Ministérios</a>
+             <a href="nosso-proposito.html" class="block p-2 font-bold text-brand-blue">Nosso Propósito</a>
         </div>
     </nav>
 
-    <header class="relative h-[60vh] flex items-center justify-center bg-gray-100 overflow-hidden mt-20">
+    <header class="relative h-[60vh] flex items-center justify-center bg-gray-100 overflow-hidden mt-20 px-4">
         <img src="https://images.unsplash.com/photo-1536514072410-50c9a87a09e6?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-50 grayscale">
         <div class="relative z-10 text-center">
-            <h1 class="text-6xl md:text-8xl font-heading font-thin text-black mb-2 tracking-tighter">NOSSO</h1>
-            <h2 class="text-4xl md:text-5xl font-heading font-bold text-black tracking-widest mb-6">PROPÓSITO</h2>
-            <p class="text-xs font-bold tracking-[0.3em] uppercase text-gray-600">Porque ninguém pode lançar outro fundamento, além do que foi posto, o qual é Jesus Cristo • 1 Coríntios 3:11</p>
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-heading font-thin text-black mb-2 tracking-tighter">NOSSO</h1>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-black tracking-widest mb-6">PROPÓSITO</h2>
+            <p class="text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-gray-600">Porque ninguém pode lançar outro fundamento, além do que foi posto, o qual é Jesus Cristo • 1 Coríntios 3:11</p>
         </div>
     </header>
 
@@ -45,34 +52,35 @@
         </div>
     </section>
 
-    <section class="bg-gray-300 py-16 text-center">
+    <section class="bg-gray-300 py-16 text-center px-4">
         <h3 class="text-2xl font-bold text-white uppercase mb-2">BASE BELÉM</h3>
         <p class="text-white font-bold tracking-wider mb-1">DOMINGO | TERÇA-FEIRA</p>
         <p class="text-white font-light text-sm"> 10H00 e 18H00 | 20H00 </p>
     </section>
 
-    <div class="bg-slate-50 border border-slate-200 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm mx-4 md:mx-auto max-w-4xl my-10">
                 
-                <div class="flex items-center gap-4 text-center md:text-left">
-                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class="fa-solid fa-file-pdf text-2xl"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-brand-navy text-lg">Estatuto Base Belém</h4>
-                        <p class="text-sm text-slate-500">Documento oficial em formato PDF (2.4 MB)</p>
-                    </div>
-                </div>
-
-                <a href="../img/04 ESTATUTO SOCIAL - Igreja Evangélica Base Belém.pdf" download="Estatuto_Base_Belem.pdf" class="flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-bold rounded-lg hover:bg-blue-800 transition transform hover:-translate-y-1 shadow-md whitespace-nowrap">
-                    <i class="fa-solid fa-download"></i>
-                    Baixar PDF
-                </a>
-
+        <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-file-pdf text-2xl"></i>
             </div>
+            <div>
+                <h4 class="font-bold text-brand-navy text-lg">Estatuto Base Belém</h4>
+                <p class="text-sm text-slate-500">Documento oficial em formato PDF (2.4 MB)</p>
+            </div>
+        </div>
+
+        <a href="../img/04 ESTATUTO SOCIAL - Igreja Evangélica Base Belém.pdf" download="Estatuto_Base_Belem.pdf" class="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white font-bold rounded-lg hover:bg-blue-800 transition transform hover:-translate-y-1 shadow-md whitespace-nowrap">
+            <i class="fa-solid fa-download"></i>
+            Baixar PDF
+        </a>
+
+    </div>
 
     <footer class="bg-white py-8 text-center text-[10px] text-gray-400 tracking-widest border-t">
         <p>TODOS OS DIREITOS RESERVADOS © 2026 IGREJA BASE BELÉM</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

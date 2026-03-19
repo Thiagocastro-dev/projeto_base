@@ -15,17 +15,24 @@
 </head>
 <body class="bg-white text-slate-700 antialiased font-sans">
 
-    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-sm shadow-md nav-dark">
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm" id="main-nav">
         <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <img src="../img/Logo Branco.png" alt="Logo Igreja Base" class="h-10 md:h-12 w-auto object-contain">
-                </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link">Início</a>
-                <a href="ministerios.html" class="nav-link text-white font-bold">Ministérios</a>
-                <a href="nosso-proposito.html" class="nav-link">Nosso Propósito</a>
+                <img src="../img/Logo Preto.png" alt="Logo Igreja Base" class="h-10 md:h-12 w-auto object-contain">
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="index.html" class="nav-link text-slate-700 hover:text-brand-navy transition">Início</a>
+                <a href="ministerios.html" class="nav-link text-black font-bold border-b-2 border-black">Ministérios</a>
+                <a href="nosso-proposito.html" class="nav-link text-slate-700 hover:text-brand-navy transition">Nosso Propósito</a>
             </div>
-            <div class="md:hidden text-white"><i class="fa-solid fa-bars text-2xl"></i></div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-slate-800"><i class="fa-solid fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4 space-y-2 shadow-xl">
+             <a href="index.html" class="block p-2 text-slate-700 font-medium">Início</a>
+             <a href="ministerios.html" class="block p-2 text-black font-bold bg-slate-50 rounded">Ministérios</a>
+             <a href="nosso-proposito.html" class="block p-2 text-slate-700 font-medium">Nosso Propósito</a>
         </div>
     </nav>
 
@@ -67,13 +74,12 @@
                 <img src="../img/base_biblica.svg" alt="Logo Base BÍBLICA" class="h-72 md:h-80 w-auto object-contain mx-auto mix-blend-multiply">
             </div>
             <p class="split text-lg leading-relaxed text-slate-600 px-4 max-w-3xl">
-                Acreditamos que uma fé inabalável só é construída sobre o conhecimento genuíno de Cristo. A Base Bíblica é o nosso ministério de ensino, 
+                Acreditamos que uma fé inabalável só é construída sobre o knowledge genuíno de Cristo. A Base Bíblica é o nosso ministério de ensino, 
                 dedicado a mergulhar nas Escrituras de forma profunda, teologicamente rica e, ao mesmo tempo, aplicável à vida diária. Através de cursos, 
                 classes de discipulado e estudos teológicos, nosso objetivo é equipar cada pessoa para ler, compreender e viver a Palavra de Deus com paixão. 
                 Queremos formar discípulos maduros, enraizados na verdade e prontos para dar resposta a razão da nossa fé.
             </p>
         </div>
-
 
           <div id="BASE DE LUTAS" class="ministry-item flex flex-col items-center justify-center text-center bg-slate-50 w-full max-w-none">
              <div class="ministry-logo flex justify-center w-full mb-4">
@@ -93,9 +99,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js"></script>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
