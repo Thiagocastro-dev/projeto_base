@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 /* style.css - Versão Final Unificada */
 
 html {
@@ -35,14 +37,12 @@ html {
 
 /* --- PADRÃO DE PÁGINAS INTERNAS (Banners) --- */
 .page-header {
-    /* Imagem de fundo padrão para cabeçalhos internos */
     background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
-    background-color: #0f172a; /* brand-navy */
+    background-color: #0f172a; 
     
-    /* Altura responsiva: usa clamp para escalar suavemente entre mobile e desktop */
     height: 40vh; 
     min-height: 280px;
     max-height: 400px;
@@ -52,7 +52,6 @@ html {
     justify-content: center;
     flex-direction: column;
     
-    /* Importante: compensa a altura do menu fixo */
     margin-top: 80px; 
     text-align: center;
     padding: 0 1rem;
@@ -65,7 +64,6 @@ html {
     color: white;
     text-shadow: 0 4px 6px rgba(0,0,0,0.3);
     line-height: 1.1;
-    /* Fonte responsiva: mínimo 2rem, ideal 5vw, máximo 4rem */
     font-size: clamp(2rem, 5vw, 4rem); 
     margin-bottom: 1rem;
 }
@@ -78,7 +76,7 @@ html {
 }
 
 .page-nav-links a {
-    color: #cbd5e1; /* slate-300 */
+    color: #cbd5e1;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -103,7 +101,7 @@ html {
 .ministry-logo {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    color: #0f172a; /* brand-navy */
+    color: #0f172a;
     transition: transform 0.3s;
 }
 
@@ -112,20 +110,79 @@ html {
     color: #1e40af;
 }
 
-/* --- ANIMAÇÕES DE TEXTO (SplitText) --- */
 .split {
     perspective: 400px;
 }
-
-/* Garante que os caracteres consigam sofrer transformações (girar, voar, etc) */
 .split div {
     display: inline-block; 
 }
 
-/* Responsividade específica para telas muito pequenas */
 @media (max-width: 640px) {
     .page-header {
-        margin-top: 70px; /* Menu mobile pode ser um pouco menor */
+        margin-top: 70px; 
         min-height: 220px;
     }
+}
+
+/* --- UTILITÁRIOS PARA O CARROSSEL E SCROLL --- */
+.hide-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; 
+}
+
+
+/* ==========================================================
+   EFEITOS DE PONTILHADOS/IMAGENS CARROSSEL 
+   Adaptado para funcionar sem conflitos com o body
+   ========================================================== */
+
+.img-box {
+    position: relative;
+    cursor: crosshair;
+}
+
+.img-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(1px) brightness(1.2) contrast(0.8);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.img-box:hover::before {
+    opacity: 0;
+}
+
+/* Imagem 1 */
+.dots1 {
+    background: url('../img/culto\ manha.jpg') no-repeat center / cover;
+}
+.dots1::before {
+    background: radial-gradient(circle, #fff5 10%, #fff0 0) repeat center / 15px 15px;
+}
+
+/* Imagem 2 */
+.dots2 {
+    background: url('../img/culto_noite.jpg') no-repeat center / cover;
+}
+.dots2::before {
+    background: 
+      radial-gradient(circle, #fff5 7%, #fff0 0) repeat 10px 10px / 20px 20px, 
+      radial-gradient(circle, #fff5 7%, #fff0 0) repeat 0 0 / 20px 20px;
+}
+
+/* Imagem 3 */
+.dots3 {
+    background: url('../img/celulas.jpg') no-repeat center / cover;
+}
+.dots3::before {
+    --size: 16px;
+    background: 
+      radial-gradient(circle, #fff3 15%, #fff0 0) repeat calc(50% - var(--size) / 2 - 0.5px) calc(50% - var(--size) / 2 - 0.5px) / var(--size) var(--size),
+      conic-gradient(from 270deg at bottom 1px right 1px, transparent 25%, #fff1 0) repeat center / var(--size) var(--size);
 }

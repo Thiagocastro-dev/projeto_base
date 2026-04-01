@@ -13,7 +13,11 @@
             theme: {
                 extend: {
                     colors: { brand: { navy: '#0f172a', blue: '#1e40af', light: '#f8fafc', gold: '#d97706' } },
-                    fontFamily: { sans: ['Open Sans', 'sans-serif'], heading: ['Montserrat', 'sans-serif'] }
+                    fontFamily: { 
+                        sans: ['Open Sans', 'sans-serif'], 
+                        heading: ['Montserrat', 'sans-serif'],
+                        space: ['Space Grotesk', 'sans-serif'] /* Adicionada a nova fonte */
+                    }
                 }
             }
         }
@@ -31,10 +35,6 @@
                     <a href="index.html" class="nav-link text-brand-blue">Início</a>
                     <a href="ministerios.html" class="nav-link">Ministérios</a>
                     <a href="nosso-proposito.html" class="nav-link">Nosso Próposito</a>
-                   <!--
-                    <a href="#footer" class="nav-link">Contato</a>
-                   -->
-                    
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-800"><i class="fa-solid fa-bars text-2xl"></i></button>
@@ -72,7 +72,7 @@
         </div>
     </section>
 
-    <section id="horarios" class="bg-[#0a0a0a] text-white py-20 md:py-32 border-b border-gray-900">
+    <section id="horarios" class="bg-[#0a0a0a] text-white py-20 md:py-32 border-b border-gray-900 font-space">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
                 
@@ -82,47 +82,84 @@
                     <div class="mt-8 hidden lg:block w-12 h-1 bg-white"></div>
                 </div>
                 
-                <div class="lg:w-2/3 w-full flex flex-col md:flex-row justify-center lg:justify-end gap-12 md:gap-16">
+                <div class="lg:w-2/3 w-full relative group">
                     
-                    <div class="text-center md:text-left flex-1">
-                        <h3 class="text-lg md:text-xl font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-3 text-gray-400">Domingo</h3>
-                        <ul class="space-y-8">
-                            <li class="flex flex-col">
-                                <span class="text-5xl md:text-6xl font-heading font-light tracking-tighter">10H</span>
-                                <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mt-2">Culto de Celebração</span>
-                            </li>
-                            <li class="flex flex-col">
-                                <span class="text-5xl md:text-6xl font-heading font-light tracking-tighter">18H</span>
-                                <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mt-2">Culto de Celebração</span>
-                            </li>
+                    <div id="schedule-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 pt-2 scroll-smooth hide-scrollbar items-stretch">
+                        
+                        <div class="flex-none w-[280px] md:w-[320px] bg-white rounded-3xl shadow-[0_0_15px_rgba(255,255,255,0.1)] overflow-hidden snap-start flex flex-col border-2 border-white/10">
+                            <div class="bg-black text-white px-5 py-4 flex justify-center items-center">
+                                <span class="text-lg font-bold tracking-widest uppercase">Domingo</span>
+                            </div>
+                            <div class="img-box dots1 w-full aspect-video"></div>
+                            <div class="p-6 flex-1 flex flex-col justify-center bg-white text-slate-800 text-center">
+                                <h4 class="font-bold text-xl mb-3 uppercase">Culto de Celebração (manhã)</h4>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-regular fa-clock"></i> 10:00 às 12:00
+                                </p>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm mt-1">
+                                    <i class="fa-solid fa-location-dot"></i> Sede Base Belém
+                                </p>
+                            </div>
+                        </div>
 
-                            <li class="flex flex-col">
-                                <span class="text-5xl md:text-6xl font-heading font-light tracking-tighter">09h</span>
-                                <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mt-2">Base de lutas</span>
-                            </li>
-                        </ul>
+                        <div class="flex-none w-[280px] md:w-[320px] bg-white rounded-3xl shadow-[0_0_15px_rgba(255,255,255,0.1)] overflow-hidden snap-start flex flex-col border-2 border-white/10">
+                            <div class="bg-black text-white px-5 py-4 flex justify-center items-center">
+                                <span class="text-lg font-bold tracking-widest uppercase">Domingo</span>
+                            </div>
+                            <div class="img-box dots2 w-full aspect-video"></div>
+                            <div class="p-6 flex-1 flex flex-col justify-center bg-white text-slate-800 text-center">
+                                <h4 class="font-bold text-xl mb-3 uppercase">Culto de Celebração (noite)</h4>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-regular fa-clock"></i> 18:00 às 20:00
+                                </p>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm mt-1">
+                                    <i class="fa-solid fa-location-dot"></i> Sede Base Belém
+                                </p>
+                            </div>
+                        </div>
+
+                    <!--    <div class="flex-none w-[280px] md:w-[320px] bg-white rounded-3xl shadow-[0_0_15px_rgba(255,255,255,0.1)] overflow-hidden snap-start flex flex-col border-2 border-white/10">
+                            <div class="bg-black text-white px-5 py-4 flex justify-center items-center">
+                                <span class="text-lg font-bold tracking-widest uppercase">Domingo</span>
+                            </div>
+                            <div class="img-box dots3 w-full aspect-video"></div>
+                            <div class="p-6 flex-1 flex flex-col justify-center bg-white text-slate-800 text-center">
+                                <h4 class="font-bold text-xl mb-3 uppercase">Base de Lutas</h4>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-regular fa-clock"></i> 09:00 às 10:00
+                                </p>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm mt-1">
+                                    <i class="fa-solid fa-location-dot"></i> Sede Base Belém
+                                </p>
+                            </div>
+                        </div>
+                        -->
+
+                        <div class="flex-none w-[280px] md:w-[320px] bg-white rounded-3xl shadow-[0_0_15px_rgba(255,255,255,0.1)] overflow-hidden snap-start flex flex-col border-2 border-white/10">
+                            <div class="bg-black text-white px-5 py-4 flex justify-center items-center">
+                                <span class="text-lg font-bold tracking-widest uppercase">Terça-Feira</span>
+                            </div>
+                            <div class="img-box dots3 w-full aspect-video"></div>
+                            <div class="p-6 flex-1 flex flex-col justify-center bg-white text-slate-800 text-center">
+                                <h4 class="font-bold text-xl mb-3 uppercase">Célula nos Lares</h4>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm">
+                                    <i class="fa-regular fa-clock"></i> 20:00 às 22:00
+                                </p>
+                                <p class="text-slate-500 font-medium flex items-center justify-center gap-2 text-sm mt-1">
+                                    <i class="fa-solid fa-house"></i> Consulte o Endereço
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="text-center md:text-left flex-1">
-                        <h3 class="text-lg md:text-xl font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-3 text-gray-400">Terça</h3>
-                        <ul class="space-y-8">
-                            <li class="flex flex-col">
-                                <span class="text-5xl md:text-6xl font-heading font-light tracking-tighter">20H</span>
-                                <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mt-2">Célula nos Lares</span>
-                            </li>
-                        </ul>
-                    </div>
-<!--
-                    <div class="text-center md:text-left flex-1">
-                        <h3 class="text-lg md:text-xl font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-3 text-gray-400">Sábado</h3>
-                        <ul class="space-y-8">
-                            <li class="flex flex-col">
-                                <span class="text-5xl md:text-6xl font-heading font-light tracking-tighter">20H</span>
-                                <span class="text-[10px] md:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mt-2">Juventude Base</span>
-                            </li>
-                        </ul>
-                    </div>
-     -->               
+                    <button id="prevBtn" class="absolute top-1/2 -left-5 transform -translate-y-1/2 bg-white text-black w-10 h-10 rounded-full shadow-lg items-center justify-center hover:bg-gray-200 transition z-10 hidden md:flex opacity-0 group-hover:opacity-100">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button id="nextBtn" class="absolute top-1/2 -right-5 transform -translate-y-1/2 bg-white text-black w-10 h-10 rounded-full shadow-lg items-center justify-center hover:bg-gray-200 transition z-10 hidden md:flex opacity-0 group-hover:opacity-100">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
                 </div>
             </div>
         </div>
@@ -133,7 +170,6 @@
             <h2 class="text-3xl font-heading font-bold mb-4">FIQUE CONECTADO</h2>
             <p class="text-slate-500 mb-8 max-w-xl mx-auto">Acompanhe nossas mensagens, agenda e conteúdos exclusivos.</p>
             <div class="flex justify-center gap-4">
-               <!-- <a href="#" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition font-bold flex items-center gap-2"><i class="fa-brands fa-youtube text-xl"></i> YouTube</a> -->
                 <a href="https://instagram.com/igrejabasebelem" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded hover:opacity-90 transition font-bold flex items-center gap-2"><i class="fa-brands fa-instagram text-xl"></i> Instagram</a>
             </div>
         </div>

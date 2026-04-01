@@ -6,10 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnMobile && menuPanel) {
         btnMobile.addEventListener('click', () => {
-            // Alterna a visibilidade do menu
             menuPanel.classList.toggle('hidden');
-            
-            // Alternar ícone (Bars <-> X)
             const icon = btnMobile.querySelector('i');
             if (menuPanel.classList.contains('hidden')) {
                 icon.classList.remove('fa-xmark');
@@ -20,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // --- Fechar menu ao clicar em um link (Mobile UX) ---
         const mobileLinks = menuPanel.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Efeito de Scroll na Navbar ---
-    // Mantido para adicionar sombra ao rolar, mas a cor base agora é definida no HTML
     const nav = document.getElementById('main-nav');
     if (nav) {
         window.addEventListener('scroll', () => {
@@ -48,6 +43,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
 
-// A SEÇÃO DE ANIMAÇÃO GSAP/SPLITTEXT FOI REMOVIDA DAQUI
+    // --- Controle e Animação do Carrossel de Horários ---
+    const carousel = document.getElementById('schedule-carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (carousel && prevBtn && nextBtn) {
+        const scrollAmount = 344; // Largura do card (320px) + gap (24px)
+        let autoPlayInterval;
+
+        // Função para mover o carrossel automaticamente
+        const startAutoPlay = () => {
+            autoPlayInterval = setInterval(() => {
+                if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                    carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 3500); 
+        };
+
+        // Função para parar a animação
+        const stopAutoPlay = () => {
+            clearInterval(autoPlayInterval);
+        };
+
+        // Eventos dos botões manuais
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            stopAutoPlay(); 
+            startAutoPlay(); 
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            stopAutoPlay(); 
+            startAutoPlay();
+        });
+
+        // Pausar animação quando o utilizador passa o rato (mouse) por cima do carrossel
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        // Inicia a animação ao carregar
+        startAutoPlay();
+    }
+});
